@@ -1,0 +1,68 @@
+  <!DOCTYPE HTML>
+  <html>
+    <head>
+    <meta charset="utf-8">
+    <title>Ho9mework3</title>
+
+    <style>  
+    .content{
+      width: 650px;
+      background-color: #eee;
+    }
+    .view-source {
+
+    border: 1px solid #cccccc;
+      }
+    .hide{
+       letter-spacing: normal;   
+      }
+    </style>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    </head>
+    <body>
+    <img src="work-1.jpg" alt="картинка">
+
+    <div class="content">
+    <div class="view-source">
+      <a href="#">1Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+    <div class="hide">1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum sint vel dignissimos voluptatem aliquid laudantium porro natus, necessitatibus magnam iure nulla neque veniam, vero eligendi nisi. Necessitatibus deserunt maxime, distinctio.</div>
+    </div>
+
+    <div class="view-source">
+        <a href="#">2Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+        <div class="hide">2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum sint vel dignissimos voluptatem aliquid laudantium porro natus, necessitatibus magnam iure nulla neque veniam, vero eligendi nisi. Necessitatibus deserunt maxime, distinctio.</div>
+    </div>
+
+    <div class="view-source">
+       <a href="#">3Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+       <div class="hide">3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum sint vel dignissimos voluptatem aliquid laudantium porro natus, necessitatibus magnam iure nulla neque veniam, vero eligendi nisi. Necessitatibus deserunt maxime, distinctio.</div>
+    </div>
+    </div>
+   
+  <script>
+  var str = prompt("Введите слово project латинскими буквами", "project")
+  var re = /^([a-z])+t/;
+  if(str.match(re) == null){
+    alert("Неверно!"); 
+  }
+  else{
+    alert("Верно!"); 
+  }
+  
+  $(function(){
+      $('.view-source .hide').hide();
+      $a = $('.view-source a');
+      $a.on('click', function(event) {
+        event.preventDefault();
+        $a.not(this).next().slideUp(500);
+        $(this).next().slideToggle(500);
+      });
+  });
+
+
+
+  </script>
+
+    </body>
+  </html>
